@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import QRGenerator from './components/QRGenerator';
 import QRScanner from './components/QRScanner';
+import ErrorBoundary from './components/ErrorBoundary';
 import './index.css';
 
 function App() {
@@ -68,21 +69,16 @@ function App() {
           {activeTab === 'generate' ? (
             <QRGenerator />
           ) : (
-import ErrorBoundary from './components/ErrorBoundary';
-
-          // ... (existing imports)
-
-          // ... inside render ...
-          {activeTab === 'generate' ? (
-            <QRGenerator />
-          ) : (
             <ErrorBoundary>
               <QRScanner />
             </ErrorBoundary>
           )}
-          )}
         </main>
       </div>
+
+      <footer className="footer">
+        <p>Created by <span className="creator-name">Awais Shabbir</span></p>
+      </footer>
     </div>
   );
 }

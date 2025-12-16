@@ -421,6 +421,79 @@ input:focus {
   font-weight: 600;
 }
 
+/* --- Scanner Widget Customization --- */
+#qr-reader-widget {
+  border: none !important;
+  padding: 0 !important;
+}
+
+#qr-reader-widget img {
+  display: none !important;
+  /* Hide the info icon if possible */
+}
+
+/* Helper text and links */
+#qr-reader-widget span,
+#qr-reader-widget a {
+  color: var(--text-primary) !important;
+  font-family: inherit !important;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+#qr-reader-widget a {
+  color: var(--primary) !important;
+  font-weight: 600;
+}
+
+#qr-reader-widget a:hover {
+  text-decoration: underline;
+}
+
+/* Buttons inside the widget */
+#qr-reader-widget button {
+  background: var(--primary) !important;
+  color: #fff !important;
+  border: none !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  margin: 5px !important;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+#qr-reader-widget button:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+/* Stop Scanning button - usually distinctive */
+#qr-reader-widget button:contains("Stop") {
+  background: var(--danger) !important;
+}
+
+/* Video Element */
+#qr-reader-widget video {
+  border-radius: 12px;
+  border: 2px solid var(--border-color) !important;
+  margin-top: 10px;
+  object-fit: cover;
+}
+
+/* Select camera dropdown */
+#qr-reader-widget select {
+  background: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+  padding: 0.5rem;
+  border-radius: 8px;
+  outline: none;
+  margin-bottom: 10px;
+}
+
 /* Footer */
 .footer {
   text-align: center;
