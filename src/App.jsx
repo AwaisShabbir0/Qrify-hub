@@ -68,7 +68,18 @@ function App() {
           {activeTab === 'generate' ? (
             <QRGenerator />
           ) : (
-            <QRScanner />
+import ErrorBoundary from './components/ErrorBoundary';
+
+          // ... (existing imports)
+
+          // ... inside render ...
+          {activeTab === 'generate' ? (
+            <QRGenerator />
+          ) : (
+            <ErrorBoundary>
+              <QRScanner />
+            </ErrorBoundary>
+          )}
           )}
         </main>
       </div>
