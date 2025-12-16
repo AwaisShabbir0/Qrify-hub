@@ -13,9 +13,10 @@ This project is a static React application built with Vite. It can be easily dep
 1. Run `npm run build` locally.
 2. Login to [Netlify Drop](https://app.netlify.com/drop).
 3. Drag and drop the `dist` folder into the upload area.
+   > **IMPORTANT:** Do NOT drag the whole project folder. You must open the project folder, locate the `dist` folder (created after running `npm run build`), and drag ONLY that folder.
 4. Your site is live!
 
-### Option B: Git Integration (Recommended)
+### Option B: Git Integration (Recommended)`
 1. Push your code to a GitHub/GitLab/Bitbucket repository.
 2. Login to Netlify and click "Add new site" > "Import from Git".
 3. Authorize and select your repository.
