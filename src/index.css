@@ -405,3 +405,33 @@ input:focus {
   color: var(--primary);
   transition: color 0.2s;
 }
+
+/* Footer */
+.footer {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  padding-bottom: 2rem;
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.creator-name {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  padding-bottom: 2rem;
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.creator-name {
+  color: var(--primary);
+  font-weight: 600;
+}

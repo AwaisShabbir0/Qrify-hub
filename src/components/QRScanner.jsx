@@ -19,7 +19,23 @@ const QRScanner = () => {
 
     const startScanning = async () => {
         setScanResult(null);
-        const config = { fps: 10, qrbox: { width: 250, height: 250 } };
+
+        // Responsive QR Box
+        const qrBoxFunction = (viewfinderWidth, viewfinderHeight) => {
+            const minEdgePercentage = 0.7; // 70%
+            const minEdgeSize = Math.min(viewfinderWidth, viewfinderHeight);
+            const qrboxSize = Math.floor(minEdgeSize * minEdgePercentage);
+            return {
+                width: qrboxSize,
+                height: qrboxSize
+            };
+        };
+
+        const config = {
+            fps: 10,
+            qrbox: qrBoxFunction,
+            aspectRatio: 1.0
+        };
 
         try {
             await scannerRef.current.start(
@@ -38,7 +54,13 @@ const QRScanner = () => {
             setIsScanning(true);
         } catch (err) {
             console.error("Error starting scanner", err);
-            alert("Could not start camera. Ensure you gave permissions and are using HTTPS.");
+            let msg = "Could not start camera.";
+            if (err?.name === 'NotAllowedError') {
+                msg = "Camera permission denied. Please allow access.";
+            } else if (err?.name === 'NotFoundError') {
+                msg = "No camera found on this device.";
+            }
+            alert(msg);
         }
     };
 
